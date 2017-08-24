@@ -1,0 +1,180 @@
+@charset "UTF-8";
+@import "../variables";
+
+/// 主按钮
+/// @group UI
+/// @access public
+%m-primary-btn{
+  display: inline-block;
+  box-sizing: border-box;
+  border: 0 none;
+  border-radius: 3px;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  height: 44px;
+  line-height: 44px;
+  transition: background .3s ease;
+  -webkit-appearance: none;
+  background-color: $m-orange;
+  outline: 0;
+  &[disabled] , &.disabled {
+    pointer-events: none;
+    background-color: $m-gray-l3;
+    color: $m-gray;
+    border: 1px solid $m-gray-d;
+  }
+  &:active, &.active {
+    background-color: #EE4C00;
+  }
+}
+
+/// 次按钮
+/// @group UI
+/// @access public
+%m-minor-btn {
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #656565;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  height: 44px;
+  line-height: 44px;
+  transition: background .3s ease;
+  -webkit-appearance: none;
+  background-color: white;
+  outline: 0;
+  &[disabled] , &.disabled {
+    pointer-events: none;
+    background-color: $m-gray-l3;
+    color: $m-gray;
+  }
+  border: 1px solid $m-gray-d;
+  &:active, &.active {
+    background-color: $m-gray-l2;
+  }
+}
+
+/// 按钮
+///@group UI
+/// @access public
+/// @todo 增加多种尺寸
+%m-btn {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 6px;
+  height: 30px;
+  border: 0 none;
+  border-radius: 3px;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 30px;
+  transition: background 1s ease;
+  -webkit-appearance: none;
+  &[disabled] , &.disabled {
+    pointer-events: none;
+    background-color: $m-gray-l3;
+    color: $m-gray;
+    border: 1px solid $m-gray-d;
+  }
+  outline: none;
+}
+/// 新按钮
+/// @group UI
+/// @param {Color} $bg-color  - 背景色
+/// @param {Color} $color - 字体颜色
+/// @param {Color} $border-color [none] - 边框颜色 `none` 表示没有边框
+/// @access public
+@mixin m-btn($bg-color, $color, $border-color: none) {
+  width: 100%;
+  display: inline-block;
+  background-color: $bg-color;
+
+  border-radius: px(6);
+  border: none;
+
+  @if($border-color != none){
+    @include m-r1b($border-color, px(12));
+  }
+
+  line-height: px(88);
+  font-size: px(36);
+  color: $color;
+
+  &:active {
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.1);
+    &:after {
+      content: none;
+    }
+  }
+}
+
+/// 橙色按钮
+/// @group UI
+/// @access public
+@mixin m-orange-btn {
+  @include m-btn(#FF5000, #FFFFFF);
+}
+
+/// 黄色按钮
+/// @group UI
+/// @access public
+@mixin m-yellow-btn {
+  @include m-btn(#FFC900, #3D3D3D);
+}
+
+/// 白底黑字按钮
+/// @group UI
+/// @access public
+@mixin m-white-bg-black-font-btn {
+  @include m-btn(#FFFFFF, #3D3D3D, #A5A5A5);
+}
+
+/// 白底黄字按钮
+/// @group UI
+/// @access public
+@mixin m-white-bg-yellow-font-btn {
+  @include m-btn(#FFFFFF, #EE9900, #EE9900);
+}
+
+
+/// "X"形状 关闭按钮
+/// @group UI
+/// @param {px} $width - 宽
+/// @param {px} $height - 高
+/// @param {Color} $bg-color [#FFFFFF] - 背景色
+/// @access public
+@mixin m-close($width , $height, $bg-color: #FFFFFF) {
+  position: relative;
+  display: inline-block;
+  width: $width;
+  height: $height;
+  overflow: hidden;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: $width/2;
+    top: 50%;
+    left: 50%;
+    margin-left: -$width/2/2;
+    margin-top: -0.5px;
+    background-color: $bg-color;
+  }
+  &::before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  &::after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}

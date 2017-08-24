@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+@import 'functions/util';
+
+//// mpi/css基础变量
+/// 变量使用m-作为命名空间
+/// 为降低使用者开发成本，以`l(light)`表示增白，以`d(dark)`表示增黑，按照明暗程度排列l3\l2\l1\l\normal\d\d1\d2\d3
+
+/// 基础蓝色 
+/// @type Color
+/// @group color
+/// @access public
+$m-blue: #009FF0;
+
+/// 基础橙色 
+/// @type Color
+/// @group color
+/// @access public
+$m-orange: #ff5000;
+
+/// 基础黄色 
+/// @type Color
+/// @group color
+/// @access public
+$m-yellow: #ffc900;
+$m-yellow-l2: #FFFDF5;
+$m-yellow-l1: #FFEEAE;
+$m-yellow-l: #FFDE60;
+$m-yellow-d: #FFB200;
+$m-yellow-d1: #EE9900;
+
+/// 基础绿色 
+/// @type Color
+/// @group color
+/// @access public
+$m-green: #70c413;
+
+/// 基础灰色-浅3
+/// @type Color
+/// @group color
+/// @access public
+$m-gray-l3: #FBFBFB;
+
+/// 基础灰色-浅2
+/// @type Color
+/// @group color
+/// @access public
+$m-gray-l2: #FAFAFA;
+
+/// 基础灰色-浅1
+/// @type Color
+/// @group color
+/// @access public
+$m-gray-l1: #F2F3F4;
+
+/// 基础灰色-浅
+/// @type Color
+/// @group color
+/// @access public
+$m-gray-l: #E0E0E0;
+
+/// 基础灰色 
+/// @type Color
+/// @group color
+/// @access public
+$m-gray: #CCC;
+
+/// 基础灰色-深
+/// @type Color
+/// @group color
+/// @access public
+$m-gray-d: #A5A5A5;
+
+/// 基础灰色-深1
+/// @type Color
+/// @group color
+/// @access public
+$m-gray-d1: #666;
+
+/// 基础灰色-深
+/// @type Color
+/// @group color
+/// @access public
+$m-gray-d2: #3D3D3D;
+
+
+
+/// 750宽度下的字号,用于rem计算, 要加default,这样可被业务线定义覆盖
+/// @type int
+/// @access public
+$m-root-font-size: 75 !default;
+
+
+/// 主色 
+/// @deprecated
+/// @type Color
+/// @group color
+/// @access public
+$m-primary-color: #FFC900;
+
+
+
+/// 重点提示色（如金额），可根据业务自行使用
+/// @deprecated
+/// @type Color
+/// @group color
+/// @access public
+$m-emphasize-color: #FF5000;
+
+/// 浅色文字颜色，仅用于标题\按钮和深色背景中
+/// @deprecated
+/// @type Color
+/// @group color
+/// @access public
+$m-light-txt-color: #fff;
+
+/// 深色文字颜色，标题\输入框标签\输入内容\文本
+/// @deprecated
+/// @type Color
+/// @group color
+/// @access public
+$m-dark-txt-color: #333;
+
+/// tab文字颜色，tab文字、文本
+/// @deprecated
+/// @type Color
+/// @group color
+/// @access public
+$m-tab-txt-color: #666;
+
+/// 次要文字颜色，小标题、说明文字
+/// @deprecated
+/// @type Color
+/// @group color
+/// @access public
+$m-sub-txt-color: #a5a5a5;
+
+/// 提示文字颜色，暗提示
+/// @deprecated
+/// @type Color
+/// @group color
+/// @access public
+$m-hint-txt-color: #ccc;
+
+/// 分割线文字颜色
+/// @deprecated
+/// @type Color
+/// @group color
+/// @access public
+$m-divider-txt-color: #e0e0e0;
+
+/// cell灰色条和背景色
+/// @deprecated
+/// @type Color
+/// @group color
+/// @access public
+$m-cell-bg-color: #f2f3f4;
