@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "sass reset.scss build/reset.css"
+    "build": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/FFF-team/scss_mixin#readme",
   "devDependencies": {
-    "sass": "^1.0.0-beta.2"
+    "node-sass": "^4.5.3"
   }
 }
